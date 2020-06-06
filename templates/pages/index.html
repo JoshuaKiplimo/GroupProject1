@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+
+<div class="row">
+<div class = "col-md-6 text-center">
+{% for article in news.articles %}
+    <p>{{article.author}}</p>
+    <p>{{article.title}}</p>
+    <a href={{article.url}}>Link</a>
+    <br><br><br>
+{% endfor %}
+</div>
+
+<div class = "col-md-6 text-center">
+{% for forecast in weather.list %}
+    <p>{{forecast.dt_txt}}&emsp;&emsp;{{forecast.main.temp}}</p>
+    <br>
+{% endfor %}
+</div>
+</div><!--ROW-->
+</div> <!--container-->
+{% endblock %}
